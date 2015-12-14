@@ -1,3 +1,11 @@
+//
+//  AppUIConfig.swift
+//  studentdayi
+//
+//  Created by FangYan on 15/12/7.
+//  Copyright © 2015年 yousi.inc. All rights reserved.
+//
+/*
 ****使用说明****
 
 ==色彩名说明==
@@ -111,3 +119,4 @@ let YSUIShadowRadius:Dictionary <String,CGSize> = [
     "NM":CGSizeMake (0, 2.0),
     "SM":CGSizeMake (0, 1.0)
 ]
+
