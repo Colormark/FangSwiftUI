@@ -93,6 +93,9 @@ public struct UI {
         
     ]
     
+    /*
+    * 文字颜色
+    */
     let TextColor: Dictionary <String,UIColor> = [
         
         "Defalut" : UIColor(red: 0x0/255, green: 0x0/255, blue: 0x0/255, alpha: 0.87),//对于白色背景上的文字，标准 alpha 值为 87%
@@ -102,6 +105,9 @@ public struct UI {
         
     ]
     
+    /*
+    * 文字大小
+    */
     static let TextSize: Dictionary <String,CGFloat> = [
         "XXXL":42,       //Display1
         "XXL":34,        //Display2
@@ -113,6 +119,9 @@ public struct UI {
         "XXS":11         //Display3
     ]
     
+    /*
+    * 布局间隔
+    */
     static let Layout: Dictionary <String,CGFloat> = [
         
         "Type"       :   4,         //最小距离和尺寸单元，排版/文字（Type）与间隔为 4dp 的基准网格对齐。在工具条中的图标同样与间隔为 4dp 的基准网格对齐。
@@ -136,13 +145,20 @@ public struct UI {
         
     ]
     
+    /*
+    * 按钮高度
+    */
     static let ButtonSize: Dictionary <String,CGFloat> = [
-        "XL"         : 28,
-        "LG"         : 18,
-        "Normal"     :14,
-        "SM"         :12
+        "XL"         :72,
+        "LG"         :56,
+        "Normal"     :40,
+        "SM"         :28,
+        "XS"         :16
     ]
     
+    /*
+    * 圆角
+    */
     static let Radius: Dictionary <String,CGFloat> = [
         "None"       :0,
         "Tiny"       :0.15,
@@ -151,7 +167,9 @@ public struct UI {
         "Cricle"     :1
     ]
     
-    
+    /*
+    * 阴影
+    */
     struct Shadow {
         
         static let offset: Dictionary <String,CGSize> = [
