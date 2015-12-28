@@ -40,7 +40,7 @@ enum YSButtonRadius:Int {
 
 @IBDesignable
 public class BLButton: UIButton {
-    
+
     @IBInspectable var theme : Int = 0 {
         didSet {
             commonInit()
@@ -62,18 +62,15 @@ public class BLButton: UIButton {
         }
     }
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
-    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
     
     func initWith (theme:YSButtonTheme , size:YSButtonSize , modal:YSButtonModal , radius:YSButtonRadius){
     
@@ -81,56 +78,54 @@ public class BLButton: UIButton {
             self.theme = theme.rawValue
         }
     
-        NSLog(">>>%d", self.theme)
-    
     }
     
     func commonInit (){
         
         if self.size == 0 {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - (28 - self.frame.size.height)/2, self.frame.size.width, 28)
-            self.titleLabel?.font = UIFont.systemFontOfSize(YSUISize["SM"]!)
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - (UI.ButtonSize["SM"]! - self.frame.size.height)/2, self.frame.size.width, UI.ButtonSize["SM"]!)
+            self.titleLabel?.font = UIFont.systemFontOfSize(UI.TextSize["XS"]!)
         } else if self.size == 1 {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - (40 - self.frame.size.height)/2, self.frame.size.width, 40)
-            self.titleLabel?.font = UIFont.systemFontOfSize(YSUISize["NM"]!)
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - (UI.ButtonSize["Normal"]! - self.frame.size.height)/2, self.frame.size.width, UI.ButtonSize["Normal"]!)
+            self.titleLabel?.font = UIFont.systemFontOfSize(UI.TextSize["Normal"]!)
         } else if self.size == 2 {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - (56 - self.frame.size.height)/2, self.frame.size.width, 56)
-            self.titleLabel?.font = UIFont.systemFontOfSize(YSUISize["XL"]!)
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - (UI.ButtonSize["LG"]! - self.frame.size.height)/2, self.frame.size.width, UI.ButtonSize["LG"]!)
+            self.titleLabel?.font = UIFont.systemFontOfSize(UI.TextSize["XL"]!)
         }
         
         if self.modal == 0 {
             self.layer.borderWidth = 1
             self.layer.backgroundColor = UIColor.clearColor().CGColor
             if self.theme == 0 {
-                self.layer.borderColor = YSUIColor["primary"]?.CGColor
-                self.setTitleColor(YSUIColor["primary"]!, forState:.Normal)
+                self.layer.borderColor = UI.Color["primary"]?.CGColor
+                self.setTitleColor(UI.Color["primary"]!, forState:.Normal)
             }else if self.theme == 1 {
-                self.layer.borderColor = YSUIColor["primaryLight"]?.CGColor
-                self.setTitleColor(YSUIColor["primaryLight"]!, forState:.Normal)
+                self.layer.borderColor = UI.Color["primaryLight"]?.CGColor
+                self.setTitleColor(UI.Color["primaryLight"]!, forState:.Normal)
             }else if self.theme == 2 {
-                self.layer.borderColor = YSUIColor["lineDark"]?.CGColor
-                self.setTitleColor(YSUIColor["lineDark"]!, forState:.Normal)
+                self.layer.borderColor = UI.Color["lineDark"]?.CGColor
+                self.setTitleColor(UI.Color["lineDark"]!, forState:.Normal)
             }else if self.theme == 3 {
-                self.layer.borderColor = YSUIColor["black3"]?.CGColor
-                self.setTitleColor(YSUIColor["black3"]!, forState:.Normal)
+                self.layer.borderColor = UI.Color["black3"]?.CGColor
+                self.setTitleColor(UI.Color["black3"]!, forState:.Normal)
             }else if self.theme == 4 {
-                self.layer.borderColor = YSUIColor["warning"]?.CGColor
-                self.setTitleColor(YSUIColor["warning"]!, forState:.Normal)
+                self.layer.borderColor = UI.Color["warning"]?.CGColor
+                self.setTitleColor(UI.Color["warning"]!, forState:.Normal)
             }
         }else if self.modal == 1 {
             self.layer.borderWidth = 0
-            self.setTitleColor(YSUIColor["white"]!, forState:.Normal)
+            self.setTitleColor(UI.Color["white"]!, forState:.Normal)
             if self.theme == 0 {
-                self.layer.backgroundColor = YSUIColor["primary"]?.CGColor
+                self.layer.backgroundColor = UI.Color["primary"]?.CGColor
             }else if self.theme == 1 {
-                self.layer.backgroundColor = YSUIColor["primaryLight"]?.CGColor
+                self.layer.backgroundColor = UI.Color["primaryLight"]?.CGColor
             }else if self.theme == 2 {
-                self.layer.backgroundColor = YSUIColor["lineDark"]?.CGColor
+                self.layer.backgroundColor = UI.Color["lineDark"]?.CGColor
             }else if self.theme == 3 {
-                self.layer.backgroundColor = YSUIColor["black3"]?.CGColor
+                self.layer.backgroundColor = UI.Color["black3"]?.CGColor
             }else if self.theme == 4 {
-                self.layer.borderColor = YSUIColor["warning"]?.CGColor
-                self.setTitleColor(YSUIColor["warning"]!, forState:.Normal)
+                self.layer.borderColor = UI.Color["warning"]?.CGColor
+                self.setTitleColor(UI.Color["warning"]!, forState:.Normal)
             }
         }
         
@@ -150,7 +145,6 @@ public class BLButton: UIButton {
             self.layer.cornerRadius = self.frame.size.height
             
         }
-        
         
     }
     
