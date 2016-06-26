@@ -1,6 +1,5 @@
 //
-//  BLDirButton.swift
-//  BLDirButton
+//  Button+Icon+Caption
 //
 //  Created by FangYan on 16/1/29.
 //  Copyright © 2016年 yousi.inc. All rights reserved.
@@ -9,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-public class BLDirButton: UIButton {
+public class FSUButtonIconCaption: UIButton {
 
     //Gap between image and title
     @IBInspectable var gap : Int = 10 {
